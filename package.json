@@ -16,7 +16,6 @@
     "src",
     "dist/*.js"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-alias": "^2.2.0",
     "@storybook/addon-notes": "^5.2.8",
@@ -29,7 +28,6 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.0-beta.30",
     "babel-core": "^7.0.0-bridge.0",
-    "canvas": "2.6.0",
     "core-js": "^3.6.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.7.2",
