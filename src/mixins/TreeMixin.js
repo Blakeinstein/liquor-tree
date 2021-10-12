@@ -178,6 +178,10 @@ export default {
       return this.tree.find(criteria, multiple)
     },
 
+    findByPath (path)  {
+      return this.tree.findByPath(path)
+    },
+
     findAll (criteria) {
       return this.tree.find(criteria, true)
     },

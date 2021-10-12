@@ -694,6 +694,17 @@ export default class Tree {
     return new Selection(this, [result[0]])
   }
 
+  findByPath (path) {
+    let parts = path.split('/')
+    let currNode = this.model.find(x => x.text == parts[0])
+    if (!currNode) return false
+    for (let i = 1; i < parts.length; i++) {
+      if (!currNode || currNode.children.length == 0) return false
+      currNode = currNode.children.find(x => x.text == parts[i])
+    }
+    return new Selection(this, [currNode])
+  }
+
   updateData (criteria, callback) {
     const nodes = this.find(criteria)
 

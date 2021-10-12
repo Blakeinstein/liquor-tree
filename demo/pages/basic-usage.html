@@ -60,8 +60,10 @@
 
           <div class="example-tree">
             <button @click="initTree2" v-if="!treeData2">Build Tree</button>
+            <button @click="selectNode" v-if="treeData2">Select node</button>
             <tree
               v-if="treeData2"
+              ref="tree"
               :data="treeData2"
             />
           </div>
@@ -116,12 +118,16 @@
         methods: {
           initTree2() {
             this.treeData2 = new Promise(resolve => {
-              setTimeout(() => resolve(getTreeData1()), 2600)
+              setTimeout(() => resolve(getTreeData1()), 100)
             })
 
             this.treeData2.then(data => {
               data[0].state = {}
             })
+          },
+          selectNode() {
+            let nodes = this.$refs.tree.findByPath('Item 2/Item 2.2')
+            nodes && nodes.select()
           }
         }
       })
