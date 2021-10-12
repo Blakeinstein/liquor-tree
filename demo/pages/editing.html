@@ -10,7 +10,7 @@
     <!-- first import Vue -->
     <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
     <script src="../assets/vue.js"></script>
-    <script src="/liquor-tree.umd.js"></script>
+    <script src="/liquor-file-tree.umd.js"></script>
 
     <style>
       .filter-field {
@@ -65,7 +65,7 @@
           this.$refs.tree.$on('node:editing:start', (node) => {
           	console.log('Start editing: ' + node.text)
           })
-          
+
         	this.$refs.tree.$on('node:editing:stop', (node, prevNodeText) => {
           	console.log('Stop editing: ' + node.text + ', ' + prevNodeText)
           })

@@ -10,7 +10,7 @@
     <!-- first import Vue -->
     <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
     <script src="../assets/vue.js"></script>
-    <script src="/liquor-tree.umd.js"></script>
+    <script src="/liquor-file-tree.umd.js"></script>
 
 
     <style>
@@ -49,7 +49,7 @@
             <p>Also we added some tree options. <a href="https://amsik.github.io/liquor-tree/#Component-Options">Full list.</a></p>
           </div>
           <div class="example-tree">
-            <tree :data="treeData1" :options="treeOptions1"/>
+            <tree :data="treeData1" ref="mountTree" :options="treeOptions1"/>
           </div>
         </div>
 
@@ -114,7 +114,12 @@
             deletion: true
           }
         }),
-
+        mounted() {
+          console.log(this.$refs.mountTree.find('Item'))
+          let nodes = this.$refs.mountTree.findByPath('Item 2/Item 2.2')
+          console.log(nodes)
+          nodes && nodes.select()
+        },
         methods: {
           initTree2() {
             this.treeData2 = new Promise(resolve => {
