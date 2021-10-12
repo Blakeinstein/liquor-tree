@@ -696,7 +696,7 @@ export default class Tree {
 
   findByPath (path) {
     let parts = path.split('/')
-    let currNode = this.model.find(x => x.text == parts[0])
+    let currNode = (this.model || []).find(x => x.text == parts[0])
     if (!currNode) return false
     for (let i = 1; i < parts.length; i++) {
       if (!currNode || currNode.children.length == 0) return false

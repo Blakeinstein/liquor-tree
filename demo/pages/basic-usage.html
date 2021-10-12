@@ -39,7 +39,7 @@
             <p v-if="selectedNode0">Selected nodes: <b>{{ selectedNode0.map(s => s.text) }}</b></p>
           </div>
           <div class="example-tree">
-            <tree :data="treeData0" v-model="selectedNode0" />
+            <tree :data="treeData0" v-model="selectedNode0" @tree:mounted="onTreeMount" />
           </div>
         </div>
 
@@ -114,12 +114,6 @@
             deletion: true
           }
         }),
-        mounted() {
-          console.log(this.$refs.mountTree.find('Item'))
-          let nodes = this.$refs.mountTree.findByPath('Item 2/Item 2.2')
-          console.log(nodes)
-          nodes && nodes.select()
-        },
         methods: {
           initTree2() {
             this.treeData2 = new Promise(resolve => {
@@ -132,6 +126,12 @@
           },
           selectNode() {
             let nodes = this.$refs.tree.findByPath('Item 2/Item 2.2')
+            nodes && nodes.select()
+          },
+          onTreeMount(tree) {
+            console.log(tree.find('Item'))
+            let nodes = tree.findByPath('Item 2/Item 2.2')
+            console.log(nodes)
             nodes && nodes.select()
           }
         }

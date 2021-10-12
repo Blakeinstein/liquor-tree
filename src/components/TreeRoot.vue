@@ -2,7 +2,7 @@
   <component
     :is="tag"
     role="tree"
-    :class="{'tree': true, 'tree-loading': this.loading, 'tree--draggable' : !!this.draggableNode}"
+    :class="{'tree': true, 'tree-loading': loading, 'tree--draggable' : !!draggableNode}"
   >
     <template v-if="filter && matches.length == 0">
       <div
@@ -140,7 +140,7 @@
       visibleModel() {
         return this.model.filter(function(node) {
           return node && node.visible()
-        }) 
+        })
       },
       visibleMatches() {
         return this.matches.filter(function(node) {
@@ -148,7 +148,7 @@
         })
       }
     },
-    
+
     watch: {
       filter (term) {
         this.tree.filter(term)
