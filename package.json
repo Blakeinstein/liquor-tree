@@ -1,8 +1,8 @@
 {
-  "name": "liquor-tree",
-  "description": "A Vue.js tree component.",
+  "name": "liquor-file-tree",
+  "description": "A Vue.js file tree component.",
   "version": "0.2.70",
-  "author": "Kostiantyn <phlyze@gmail.com>",
+  "author": "Blaine <rishi1998@gmail.com>",
   "scripts": {
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
@@ -10,8 +10,8 @@
     "build": "cross-env NODE_ENV=production rollup -c rollup.config.js",
     "storybook": "start-storybook -p 9001 -c ./docs/storybook -s ./docs/storybook/public"
   },
-  "main": "dist/liquor-tree.umd.js",
-  "module": "dist/liquor-tree.esm.js",
+  "main": "dist/liquor-file-tree.umd.js",
+  "module": "dist/liquor-file-tree.esm.js",
   "files": [
     "src",
     "dist/*.js"
@@ -53,7 +53,6 @@
     "not dead",
     "Explorer 11"
   ],
-  "homepage": "https://amsik.github.io/liquor-tree/",
   "keywords": [
     "vue",
     "tree",
@@ -61,11 +60,11 @@
     "vue-tree",
     "treeview"
   ],
-  "library": "LiquorTree",
+  "library": "LiquorFileTree",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amsik/liquor-tree.git"
+    "url": "git+https://github.com/blakeinstein/liquor-tree.git"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.1",

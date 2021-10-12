@@ -32,7 +32,7 @@ const outputES = {
 const outputUMD = {
   file: pkg.main,
   format: 'umd',
-  name: 'LiquorTree',
+  name: 'LiquorFileTree',
   sourcemap: true,
   banner
 }
