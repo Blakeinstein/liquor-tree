@@ -1,7 +1,7 @@
 {
-  "name": "liquor-file-tree",
+  "name": "@blakeinstein/liquor-file-tree",
   "description": "A Vue.js file tree component.",
-  "version": "0.2.70",
+  "version": "0.1.0",
   "author": "Blaine <rishi1998@gmail.com>",
   "scripts": {
     "lint": "vue-cli-service lint",
@@ -64,7 +64,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blakeinstein/liquor-tree.git"
+    "url": "git://github.com/blakeinstein/liquor-tree.git"
+  },
+  "publishConfig": {
+    "@blakeinstein:registry":"https://npm.pkg.github.com"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.1",
